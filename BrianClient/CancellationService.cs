@@ -44,7 +44,7 @@ namespace BrianClient
                     _logger.LogInformation($"Trailer is {trailer.Name} with size {trailer.Bytes.Length / 1024} kb");
                 }
             }
-            catch(OperationCanceledException e)
+            catch (OperationCanceledException e)
             {
                 _logger.LogInformation($"The operation was cancelled: {e.Message}");
             }

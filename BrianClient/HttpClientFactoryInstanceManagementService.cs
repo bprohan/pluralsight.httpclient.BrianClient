@@ -1,13 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
+using Movies.Client.Models;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Movies.Client.Models;
 
 namespace BrianClient
 {
@@ -20,11 +18,11 @@ namespace BrianClient
 
 
         // The HttpFactory, or any named HTTPClient can be injected
-        public HttpClientFactoryInstanceManagementService(ILogger<HttpClientFactoryInstanceManagementService> logger, 
+        public HttpClientFactoryInstanceManagementService(ILogger<HttpClientFactoryInstanceManagementService> logger,
             IHttpClientFactory httpClientFactory, MoviesClient moviesClient)
         {
             _logger = logger;
-            _httpClientFactory = httpClientFactory; 
+            _httpClientFactory = httpClientFactory;
             _moviesClient = moviesClient;
         }
 
@@ -113,5 +111,5 @@ namespace BrianClient
             }
 
         }
-    } 
+    }
 }

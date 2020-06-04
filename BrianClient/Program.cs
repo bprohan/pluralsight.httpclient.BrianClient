@@ -24,6 +24,7 @@ namespace BrianClient
                //services.AddHostedService<StreamService>();
                //services.AddHostedService<CancellationService>();
                services.AddHttpClient();
+               services.AddHostedService<HttpHandlersService>();
 
 
                //NamedClient
@@ -64,9 +65,10 @@ namespace BrianClient
 
 
                //services.AddScoped<IIntegrationService, TestIntegrationService>();
-               services.AddScoped<IIntegrationService, HttpClientFactoryInstanceManagementService>();
-               var sp = services.BuildServiceProvider();
-               sp.GetService<IIntegrationService>().Run();
+               //services.AddScoped<IIntegrationService, HttpClientFactoryInstanceManagementService>();
+               //var sp = services.BuildServiceProvider();
+               //sp.GetService<IIntegrationService>().Run();
+
            });
     }
 

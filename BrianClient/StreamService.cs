@@ -16,7 +16,7 @@ namespace BrianClient
     {
         public ILogger _logger { get; }
         private static HttpClient _httpClient = new HttpClient(
-            new HttpClientHandler() { AutomaticDecompression = System.Net.DecompressionMethods.None}
+            new HttpClientHandler() { AutomaticDecompression = System.Net.DecompressionMethods.None }
             );
         public StreamService(ILogger<StreamService> logger)
         {
