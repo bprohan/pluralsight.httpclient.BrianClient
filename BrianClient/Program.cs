@@ -37,6 +37,8 @@ namespace BrianClient
                        client.Timeout = new TimeSpan(0, 0, 30);
                        client.DefaultRequestHeaders.Clear();
                    })
+                   .AddHttpMessageHandler(handler => new RetryPolicyDelegatingHandler(2))
+                   .AddHttpMessageHandler(handler => new TimeOutDelegatingHandler(TimeSpan.FromSeconds(5)))
                    .ConfigurePrimaryHttpMessageHandler(h =>
                        new HttpClientHandler()
                        {
