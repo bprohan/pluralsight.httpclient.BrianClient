@@ -23,8 +23,11 @@ namespace BrianClient
                //services.AddHostedService<PartialUpdateService>();
                //services.AddHostedService<StreamService>();
                //services.AddHostedService<CancellationService>();
+               //   services.AddHostedService<DealingWithErrorsAndFaultsService>();
+               
                services.AddHttpClient();
                services.AddHostedService<HttpHandlersService>();
+
 
 
                //NamedClient
@@ -56,15 +59,18 @@ namespace BrianClient
 
 
                //TypedClient.Registered with a transient scope .. Default Configuration is moved to the MoviesClient constructor
-               services.AddHttpClient<MoviesClient>()
-                   .ConfigurePrimaryHttpMessageHandler(h =>
-                       new HttpClientHandler()
-                       {
-                           AutomaticDecompression = System.Net.DecompressionMethods.GZip
-                       });
+               //services.AddHttpClient<MoviesClient>()
+               //    .ConfigurePrimaryHttpMessageHandler(h =>
+               //        new HttpClientHandler()
+               //        {
+               //            AutomaticDecompression = System.Net.DecompressionMethods.GZip
+               //        });
 
 
                //services.AddScoped<IIntegrationService, TestIntegrationService>();
+               //services.AddScoped<IIntegrationService, HttpClientFactoryInstanceManagementService>();
+              // services.AddScoped<IIntegrationService, DealingWithErrorsAndFaultsService>();
+
                //services.AddScoped<IIntegrationService, HttpClientFactoryInstanceManagementService>();
                //var sp = services.BuildServiceProvider();
                //sp.GetService<IIntegrationService>().Run();
