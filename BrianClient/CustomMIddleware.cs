@@ -1,0 +1,6 @@
+﻿namespace BrianClient
+{
+    class CustomMIddleware
+    {
+    }
+}
