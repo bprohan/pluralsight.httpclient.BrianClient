@@ -1,6 +1,6 @@
 # pluralsight.httpclient.BrianClient
 
-Deprecated.
+**Deprecated**.
 Project was migrated to Brian.Pluralsight.HttpClient (.net 6)
 
 Project created for the Pluralsight learning
